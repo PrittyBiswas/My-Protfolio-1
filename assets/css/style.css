@@ -1,97 +1,4 @@
 /*-----------------------------------*\
-  #style.css
-\*-----------------------------------*/
-
-
-:root {
-
-  /**
-   * colors
-   */
-
-  /* gradient */
-
-  --bg-gradient-onyx: linear-gradient(to bottom right,
-      hsl(240, 1%, 25%) 3%,
-      hsl(0, 0%, 19%) 97%);
-  --bg-gradient-jet: linear-gradient(to bottom right,
-      hsla(240, 1%, 18%, 0.251) 0%,
-      hsla(240, 2%, 11%, 0) 100%), hsl(240, 2%, 13%);
-  --bg-gradient-yellow-1: linear-gradient(to bottom right,
-      hsl(45, 100%, 71%) 0%,
-      hsla(36, 100%, 69%, 0) 50%);
-  --bg-gradient-yellow-2: linear-gradient(135deg,
-      hsla(45, 100%, 71%, 0.251) 0%,
-      hsla(35, 100%, 68%, 0) 59.86%), hsl(240, 2%, 13%);
-  --border-gradient-onyx: linear-gradient(to bottom right,
-      hsl(0, 0%, 25%) 0%,
-      hsla(0, 0%, 25%, 0) 50%);
-  --text-gradient-yellow: linear-gradient(to right,
-      hsl(45, 100%, 72%),
-      hsl(35, 100%, 68%));
-
-  /* solid */
-
-  --jet: hsl(0, 0%, 22%);
-  --onyx: hsl(240, 1%, 17%);
-  --eerie-black-1: hsl(240, 2%, 13%);
-  --eerie-black-2: hsl(240, 2%, 12%);
-  --smoky-black: hsl(0, 0%, 7%);
-  --white-1: hsl(0, 0%, 100%);
-  --white-2: hsl(0, 0%, 98%);
-  --orange-yellow-crayola: hsl(45, 100%, 72%);
-  --vegas-gold: hsl(45, 54%, 58%);
-  --light-gray: hsl(0, 0%, 84%);
-  --light-gray-70: hsla(0, 0%, 84%, 0.7);
-  --bittersweet-shimmer: hsl(0, 43%, 51%);
-
-  /**
-   * typography
-   */
-
-  /* font-family */
-  --ff-poppins: 'Poppins', sans-serif;
-
-  /* font-size */
-  --fs-1: 24px;
-  --fs-2: 18px;
-  --fs-3: 17px;
-  --fs-4: 16px;
-  --fs-5: 15px;
-  --fs-6: 14px;
-  --fs-7: 13px;
-  --fs-8: 11px;
-
-  /* font-weight */
-  --fw-300: 300;
-  --fw-400: 400;
-  --fw-500: 500;
-  --fw-600: 600;
-
-  /**
-   * shadow
-   */
-
-  --shadow-1: -4px 8px 24px hsla(0, 0%, 0%, 0.25);
-  --shadow-2: 0 16px 30px hsla(0, 0%, 0%, 0.25);
-  --shadow-3: 0 16px 40px hsla(0, 0%, 0%, 0.25);
-  --shadow-4: 0 25px 50px hsla(0, 0%, 0%, 0.15);
-  --shadow-5: 0 24px 80px hsla(0, 0%, 0%, 0.25);
-
-  /**
-   * transition
-   */
-
-  --transition-1: 0.25s ease;
-  --transition-2: 0.5s ease-in-out;
-
-}
-
-
-
-
-
-/*-----------------------------------*\
   #RESET
 \*-----------------------------------*/
 
@@ -105,10 +12,16 @@
 
 a {
   text-decoration: none;
+  color: aqua;
+  font-weight: bold;
+  font-size: large;
 }
 
 li {
   list-style: none;
+  border-radius: 12px;
+  transition: 1s;
+  transform: 1.5s;
 }
 
 img,
@@ -117,7 +30,7 @@ a,
 button,
 time,
 span {
-  display: block;
+  /* display: block; */
   border-radius: 61px;
 }
 
@@ -151,7 +64,8 @@ html {
 }
 
 body {
-  background: var(--smoky-black);
+  background: #2c2929;
+  color: white;
 }
 
 
@@ -178,8 +92,14 @@ article {
   background: var(--jet);
   margin: 16px 0;
 }
-
-.icon-box {
+ul#all-item {
+  display: flex;
+  align-items: center;
+}
+li#skills-item-icon {
+  padding: 0.7rem;
+}
+.icon-box ,#icon-box {
   position: relative;
   background: var(--border-gradient-onyx);
   width: 30px;
@@ -189,27 +109,27 @@ article {
   justify-content: center;
   align-items: center;
   font-size: 16px;
-  color: var(--orange-yellow-crayola);
-  box-shadow: var(--shadow-1);
+  color: hsl(182, 100%, 55%);
   z-index: 1;
 }
 
 .icon-box::before {
   content: "";
   position: absolute;
-  inset: 1px;
-  background: var(--eerie-black-1);
+  /* inset: 1px; */
+  /* background: var(--eerie-black-1); */
   border-radius: inherit;
   z-index: -1;
 }
 
+/* 
 .icon-box ion-icon {
   --ionicon-stroke-width: 35px;
-}
+} */
 
-article {
+/* article {
   display: none;
-}
+} */
 
 article.active {
   display: block;
@@ -261,9 +181,9 @@ article.active {
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 30px;
-  height: 3px;
-  background: var(--text-gradient-yellow);
+  width: 60px;
+  height: 4px;
+  background: hsl(182, 100%, 55%);
   border-radius: 3px;
 }
 
@@ -432,6 +352,7 @@ main {
   display: flex;
   align-items: center;
   gap: 16px;
+  box-shadow: -1px 1px 10px -4px #121212;
 }
 
 .contact-info {
@@ -467,11 +388,12 @@ main {
 .social-item .social-link {
   color: var(--light-gray-70);
   font-size: 18px;
+  box-shadow: -1px 1px 10px -4px aqua;
 }
 
 
 .social-item .social-link:hover {
-  color: var(--light-gray);
+  color: aqua;
 }
 
 
@@ -504,7 +426,7 @@ main {
 }
 
 .navbar-link {
-  color: var(--light-gray);
+  color: white;
   font-size: var(--fs-8);
   padding: 20px 7px;
   transition: color var(--transition-1);
@@ -569,6 +491,7 @@ main {
   border-radius: 14px;
   box-shadow: var(--shadow-2);
   z-index: 1;
+  cursor: pointer;
 }
 
 .service-item::before {
@@ -582,6 +505,10 @@ main {
 
 .service-icon-box {
   margin-bottom: 10px;
+}
+
+i#service-icon {
+  color: aqua;
 }
 
 .service-icon-box img {
@@ -1159,7 +1086,7 @@ img.projest-12 {
 
 textarea.form-input {
   min-height: 100px;
-  height: 120px;
+  height: 100px;
   max-height: 200px;
   resize: vertical;
   margin-bottom: 25px;
@@ -1186,7 +1113,7 @@ textarea.form-input::-webkit-resizer {
   border-radius: 14px;
   font-size: var(--fs-6);
   text-transform: capitalize;
-  box-shadow: var(--shadow-3);
+  box-shadow: -1px 1px 10px -4px aqua;
   z-index: 1;
   transition: var(--transition-1);
 }
@@ -1216,6 +1143,7 @@ textarea.form-input::-webkit-resizer {
 .form-btn:disabled {
   opacity: 0.7;
   cursor: not-allowed;
+  box-shadow: -1px 1px 10px -4px aqua;
 }
 
 .form-btn:disabled:hover {
@@ -1247,7 +1175,7 @@ textarea.form-input::-webkit-resizer {
    * #PORTFOLIO, BLOG 
    */
 
-  .project-img, {
+  .project-img {
     height: auto;
   }
 
@@ -1298,19 +1226,22 @@ textarea.form-input::-webkit-resizer {
 
   .article-title {
     font-weight: var(--fw-600);
-    padding-bottom: 15px;
+    padding-bottom: 10px;
   }
 
   .article-title::after {
-    width: 40px;
+    width: 120px;
     height: 5px;
   }
 
-  .icon-box {
+  
+
+  .icon-box,#icon-box {
     width: 48px;
     height: 48px;
     border-radius: 12px;
     font-size: 18px;
+    box-shadow: -1px 1px 10px -4px;
   }
 
 
@@ -1386,6 +1317,9 @@ textarea.form-input::-webkit-resizer {
   .contact-info {
     max-width: calc(100% - 64px);
     width: calc(100% - 64px);
+    padding: 10px 10px;
+    border-radius: 12px;
+    /* box-shadow: -1px 1px 10px -4px aqua; */
   }
 
 
@@ -1413,7 +1347,7 @@ textarea.form-input::-webkit-resizer {
    */
 
   .about .article-title {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
   }
 
   .about-text {
@@ -1428,6 +1362,8 @@ textarea.form-input::-webkit-resizer {
     align-items: flex-start;
     gap: 18px;
     padding: 30px;
+    box-shadow: -1px 1px 10px -4px #0a0a0a;
+    cursor: pointer;
   }
 
   .service-icon-box {
@@ -1555,7 +1491,7 @@ textarea.form-input::-webkit-resizer {
    * #PORTFOLIO, BLOG
    */
 
-  .project-img, {
+  .project-img {
     border-radius: 16px;
   }
 
@@ -1564,7 +1500,7 @@ textarea.form-input::-webkit-resizer {
    */
 
   .mapbox {
-    height: 380px;
+    height: 355px;
     border-radius: 18px;
   }
 
@@ -1575,6 +1511,7 @@ textarea.form-input::-webkit-resizer {
 
   .form-input {
     padding: 15px 20px;
+    box-shadow: -1px 1px 10px -4px aqua;
   }
 
   textarea.form-input {
@@ -1584,6 +1521,7 @@ textarea.form-input::-webkit-resizer {
   .form-btn {
     --fs-6: 16px;
     padding: 16px 20px;
+    box-shadow: -1px 1px 10px -4px aqua;
   }
 
   .form-btn ion-icon {
@@ -1679,7 +1617,7 @@ textarea.form-input::-webkit-resizer {
 
   /* portfolio and blog grid */
 
-  .project-list, {
+  .project-list {
     grid-template-columns: 1fr 1fr;
   }
 
@@ -1696,6 +1634,7 @@ textarea.form-input::-webkit-resizer {
   .form-btn {
     width: max-content;
     margin-left: auto;
+    box-shadow: -1px 1px 10px -4px aqua;
   }
 
 }
@@ -1769,7 +1708,7 @@ textarea.form-input::-webkit-resizer {
     width: max-content;
     border-radius: 0 20px;
     padding: 0 20px;
-    box-shadow: none;
+    box-shadow: -1px 1px 10px -4px aqua;
   }
 
   .navbar-list {
@@ -1882,6 +1821,9 @@ textarea.form-input::-webkit-resizer {
     min-width: 75%;
     width: 75%;
     margin: 0;
+    background: #373434;
+    border-radius: 20px;
+    box-shadow: -1px 1px 10px -4px aqua;
   }
 
 
@@ -1898,6 +1840,9 @@ textarea.form-input::-webkit-resizer {
     margin-bottom: 0;
     padding-top: 60px;
     z-index: 1;
+    background: #373434;
+    FONT-WEIGHT: 200;
+    box-shadow: -1px 1px 10px -4px aqua;
   }
 
   .sidebar-info {
@@ -1906,6 +1851,7 @@ textarea.form-input::-webkit-resizer {
 
   .avatar-box img {
     width: 150px;
+    box-shadow: -1px 1px 10px -4px aqua;
   }
 
   .info-content .name {
